@@ -1,0 +1,284 @@
+.pokemons {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 Pokémon por linha por padrão */
+    list-style: none;
+    padding: 0;
+    margin: 1rem 4rem;
+    height: auto;
+}
+
+@media screen and (min-width: 1281px) {
+    .pokemons {
+        grid-template-columns: repeat(7, 1fr); /* 8 Pokémon por linha */
+    }
+}
+
+@media screen and (max-width: 1280px) and (min-width: 1024px) {
+    .pokemons {
+        grid-template-columns: repeat(5, 1fr); /* 5 Pokémon por linha */
+    }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+    .pokemons {
+        grid-template-columns: repeat(4, 1fr); /* 4 Pokémon por linha */
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 630px) {
+    .pokemons {
+        grid-template-columns: repeat(3, 1fr); /* 3 Pokémon por linha */
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .pokemons {
+        margin: 1rem;
+        grid-template-columns: repeat(2, 1fr); /* 2 Pokémon por linha */
+        justify-items: center; /* Centraliza horizontalmente */
+    }
+
+    .pokemon {
+        background-size: 70px 100px; /* Tamanho menor para telas pequenas com altura aumentada */
+    }
+
+    .pokemon .details img {
+        max-width: 70px; /* Tamanho menor para telas pequenas */
+        max-height: 100px; /* Tamanho menor para telas pequenas */
+        position: relative;
+        left: -10px;
+        margin-left: auto;
+        margin-bottom: -5px;
+    }
+}
+
+
+
+@media screen and (max-width: 300px) {
+    .pokemons {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.pokemon {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(77, 186, 122);
+    border-radius: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border: 3px solid black;
+    font-size: 1rem;
+    overflow: hidden;
+    max-width: 250px;
+    background-image: url('/assets/img/pokeball.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 110px 110px; /* Tamanho fixo em pixels */
+}
+
+.pokemon .name {
+    color: white;
+    margin-bottom: 1.5rem; /* Ajuste o valor conforme necessário */
+    top: 0;
+    left: 0;
+}
+
+
+.pokemon .number {
+    color: rgba(255, 255, 255, 0.3);
+    text-align: right;
+    font-size: 0.65rem;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.pokemon .details .types {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.pokemon .details .types .type {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.55rem;
+    border-radius: 1rem;
+    bottom: 0; /* Alinha o elemento à parte inferior */
+    left: -10px; /* Alinha o elemento à direita */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo com transparência */
+    color: white; /* Texto branco para melhor contraste */
+    position: relative;
+    z-index: 1; /* Coloca o texto acima da imagem */
+    display: inline-block; /* Exibe o elemento como bloco em linha */
+    margin: 0.15rem 0.3rem; /* Adiciona um pequeno espaçamento vertical */
+}
+
+
+
+/* Estilos para os tipos mais escuros das tipagens dos Pokémon */
+
+
+.bg-grass .details .types .type {
+    background-color: #7ddb4e; /* Grass */
+}
+
+.bg-fire .details .types .type {
+    background-color: #fb7312; /* Fire */
+}
+
+.bg-water .details .types .type {
+    background-color: #4f84ff; /* Water */
+}
+
+.bg-electric .details .types .type {
+    background-color: #fbcb0c; /* Electric */
+}
+
+.bg-psychic .details .types .type {
+    background-color: #fa2867; /* Psychic */
+}
+
+.bg-ice .details .types .type {
+    background-color: #8cfafa; /* Ice */
+}
+
+.bg-fighting .details .types .type {
+    background-color: #ec251a; /* Fighting */
+}
+
+.bg-poison .details .types .type {
+    background-color: #cd3ecd; /* Poison */
+}
+
+.bg-ground .details .types .type {
+    background-color: #f3c64c; /* Ground */
+}
+
+.bg-flying .details .types .type {
+    background-color: #8f6bfa; /* Flying */
+}
+
+.bg-bug .details .types .type {
+    background-color: #c1d226; /* Bug */
+}
+
+.bg-rock .details .types .type {
+    background-color: #d7b829; /* Rock */
+}
+
+.bg-ghost .details .types .type {
+    background-color: #8a5dd2; /* Ghost */
+}
+
+.bg-dragon .details .types .type {
+    background-color: #7038f8; /* Dragon */
+}
+
+.bg-dark .details .types .type {
+    background-color: #a6795b; /* Dark */
+}
+
+.bg-steel .details .types .type {
+    background-color: #c4c4ec; /* Steel */
+}
+
+.bg-fairy .details .types .type {
+    background-color: #faa7b0; /* Fairy */
+}
+
+.bg-normal .details .types .type {
+    background-color: #71bd1b; /* Normal */
+}
+
+.pokemon .details {
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative; /* Adicione essa linha */
+}
+
+.pokemon .details img {
+    max-width: 150px;
+    max-height: 90px;
+    margin-left: -10px;
+
+}
+
+/* Estilos para as cores de fundo dos tipos */
+.bg-grass {
+    background-color: #78c850; /* Grass */
+}
+
+.bg-fire {
+    background-color: #f08030; /* Fire */
+}
+
+.bg-water {
+    background-color: #6890f0; /* Water */
+}
+
+.bg-electric {
+    background-color: #f8d030; /* Electric */
+}
+
+.bg-psychic {
+    background-color: #f85888; /* Psychic */
+}
+
+.bg-ice {
+    background-color: #98d8d8; /* Ice */
+}
+
+.bg-fighting {
+    background-color: #c03028; /* Fighting */
+}
+
+.bg-poison {
+    background-color: #a040a0; /* Poison */
+}
+
+.bg-ground {
+    background-color: #e0c068; /* Ground */
+}
+
+.bg-flying {
+    background-color: #a890f0; /* Flying */
+}
+
+.bg-bug {
+    background-color: #a8b820; /* Bug */
+}
+
+.bg-rock {
+    background-color: #b8a038; /* Rock */
+}
+
+.bg-ghost {
+    background-color: #705898; /* Ghost */
+}
+
+.bg-dragon {
+    background-color: #7038f8; /* Dragon */
+}
+
+.bg-dark {
+    background-color: #705848; /* Dark */
+}
+
+.bg-steel {
+    background-color: #b8b8d0; /* Steel */
+}
+
+.bg-fairy {
+    background-color: #f0b6bc; /* Fairy */
+}
+
+.bg-normal {
+    background-color: #63a11c; /* Normal */
+}
