@@ -4,7 +4,7 @@ let offset = 0; // Deslocamento para controlar quais Pokémon já foram carregad
 let windowHeight = window.innerHeight; // Altura da janela do navegador
 let documentHeight = document.body.scrollHeight; // Altura total do documento
 let loading = false; // Indica se uma solicitação de carregamento está em andamento
-const loadLimit = 33; // Carregar mais 10 Pokémon de cada vez (ajuste conforme necessário)
+const loadLimit = 50; // Carregar mais 10 Pokémon de cada vez (ajuste conforme necessário)
 const urlBase = 'https://pokeapi.co/api/v2/pokemon/'; // URL base da API
 
 // Função para converter os tipos em uma lista ordenada
