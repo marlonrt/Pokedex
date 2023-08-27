@@ -122,7 +122,7 @@
 /* Estilos para os tipos mais escuros das tipagens dos Pokémon */
 
 
-.bg-grass .details .types .type {
+.bg-grass  .details .types .type {
     background-color: #7ddb4e; /* Grass */
 }
 

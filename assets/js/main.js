@@ -4,7 +4,7 @@ let offset = 0; // Deslocamento para controlar quais Pokémon já foram carregad
 let windowHeight = window.innerHeight; // Altura da janela do navegador
 let documentHeight = document.body.scrollHeight; // Altura total do documento
 let loading = false; // Indica se uma solicitação de carregamento está em andamento
-const loadLimit = 33; // Carregar mais 10 Pokémon de cada vez (ajuste conforme necessário)
+const loadLimit = 50; // Carregar mais 50 Pokémon de cada vez (ajuste conforme necessário)
 const urlBase = 'https://pokeapi.co/api/v2/pokemon/'; // URL base da API
 
 // Função para converter os tipos em uma lista ordenada
@@ -16,13 +16,16 @@ function convertTypes(types) {
 function convertPokemon(pokemon) {
     const types = convertTypes(pokemon.types);
 
-    const pokemonType = pokemon.types[0].type.name; // Obtém o tipo principal do Pokémon
-    const backgroundColorClass = `bg-${pokemonType}`; // Cria uma classe de fundo com base no tipo
+    const pokemonType = pokemon.types[0].type.name;
+    const backgroundColorClass = `bg-${pokemonType}`;
+
+    // Capitaliza a primeira letra do nome do Pokémon
+    const capitalizedPokemonName = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
 
     return `
     <li class="pokemon ${backgroundColorClass}">
         <span class="number">#${pokemon.id.toString().padStart(3, '0')}</span>
-        <span class="name">${pokemon.name}</span>
+        <span class="name">${capitalizedPokemonName}</span>
         <div class="details">
             <ol class="types">
                 ${types}
